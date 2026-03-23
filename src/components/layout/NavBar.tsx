@@ -2,14 +2,18 @@ import { Link } from "react-router";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 const NavBar = () => {
     const navigate = useNavigate();
     const [isMobileDropdownVisible, setIsMobileDropdownVisible] = useState(false);
 
     return (
-        <header 
+        <motion.header 
             className="bg-secondary w-[95%] lg:w-9/10 max-w-7xl mx-auto my-2 h-18 sticky top-2 border-2 border-text-primary/15 rounded-3xl shadow-lg shadow-text-primary/2 z-50 flex items-center"
+            initial={{y: 10, opacity: 0.2}}
+            animate={{y: 0, opacity: 1}}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
         >
             <nav className="h-full w-full flex px-4 justify-between items-center relative">
                 <h1 
@@ -54,7 +58,7 @@ const NavBar = () => {
                     }
                 </div>
             </nav>
-        </header>
+        </motion.header>
     )
 }
 
