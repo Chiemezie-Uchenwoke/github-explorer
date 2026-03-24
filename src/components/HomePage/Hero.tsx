@@ -1,9 +1,10 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import { FaGithub } from "react-icons/fa";
 
 const HomePageHero = () => {
     return (
-        <section className="w-19/20 lg:w-9/10 max-w-7xl mx-auto min-h-[60vh] 2xl:min-h-[50vh] flex flex-col gap-6 lg:gap-10 items-center justify-center py-12">
+        <section className="w-19/20 lg:w-9/10 max-w-7xl mx-auto min-h-[60vh] 2xl:min-h-[50vh] flex flex-col gap-6 lg:gap-10 items-center justify-center py-12 relative">
             <motion.h2 
                 className="text-blue-default font-semibold text-3xl md:text-4xl lg:text-6xl text-center w-9/10 max-w-2xl mx-auto "
                 initial={{opacity: 0, y: 10}}
@@ -22,6 +23,8 @@ const HomePageHero = () => {
             >
                 Start Exploring
             </Link>
+
+            <span className="text-text-primary/70 text-xl animate-bounce "> <FaGithub /> </span>
         </section>
     )
 }
