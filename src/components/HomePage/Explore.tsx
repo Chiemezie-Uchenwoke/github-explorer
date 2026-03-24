@@ -7,7 +7,7 @@ const Explore = () => {
                 Ready to explore GitHub?
             </h2>
 
-            <Link to={"/explore"} className="bg-blue-dark text-white py-3 px-12 rounded-2xl font-medium text-lg">
+            <Link to={"/explore"} className="bg-blue-dark text-white py-3 px-12 rounded-2xl font-medium text-lg hover:brightness-90 duration-200">
                 Find a Developer
             </Link>
         </div>
