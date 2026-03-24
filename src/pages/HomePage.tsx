@@ -1,12 +1,11 @@
+import HomePageHero from "../components/HomePage/hero/Hero";
 import MainLayout from "../components/layout/MainLayout";
 
 const HomePage = () => {
     return (
         <>
             <MainLayout>
-                <section>
-                    
-                </section>
+                <HomePageHero />
             </MainLayout>
         </>
     )
