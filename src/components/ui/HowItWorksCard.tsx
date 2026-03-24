@@ -19,7 +19,7 @@ const HowItWorksCard = ({icon, title, desc}: HowItWorksProps) => {
                 {title}
             </h3>
 
-            <p className="text-text-primary/50 text-sm">
+            <p className="text-text-primary/50">
                 {desc}
             </p>
         </article>
