@@ -1,11 +1,13 @@
-import HomePageHero from "../components/HomePage/hero/Hero";
+import HomePageHero from "../components/HomePage/Hero";
 import MainLayout from "../components/layout/MainLayout";
+import Features from "../components/HomePage/Features";
 
 const HomePage = () => {
     return (
         <>
             <MainLayout>
                 <HomePageHero />
+                <Features />
             </MainLayout>
         </>
     )
