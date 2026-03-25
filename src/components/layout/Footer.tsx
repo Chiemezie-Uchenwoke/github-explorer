@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
 
     return (
-        <footer className="bg-blue-muted/70 mt-16 lg:mt-20 py-18 flex flex-col gap-6 items-center select-none">
+        <footer className="bg-blue-muted/30 mt-16 lg:mt-20 py-18 flex flex-col gap-6 items-center select-none">
             <h2 className="text-text-primary/90 font-semibold text-xl">GitHub Finder</h2>
             <p className="text-text-primary/60 font-medium">
                 Developed by <a href="https://chiemezie-uche.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline"> Chiemezie Uchenwoke </a>
