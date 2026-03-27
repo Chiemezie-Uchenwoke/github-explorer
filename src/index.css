@@ -5,12 +5,15 @@
   --color-primary: #111111;
   --color-secondary: #1a1a1a;
   --color-card: #222222;
+  --color-section-variation: #161616;
 
   /* Blue shades */
   --color-blue-light: #93c5fd;
   --color-blue-default: #3b82f6;
   --color-blue-dark: #1d4ed8;
   --color-blue-muted: #1e3a5f;
+  --color-blue-button: #4f8ef7;
+  --color-muted-bg: #1d3557;
 
   /* Gold shades */
   --color-gold-light: #fde68a;
