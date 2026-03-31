@@ -17,7 +17,7 @@ const useFetchGithubUser = () => {
     const handleFetchGithubUser = async () => {
         setLoading(true);
         try {
-            const apiUrl = "https://api.github.com/users/USERNAME";
+            const apiUrl = "https://api.github.com/users";
 
             const response: Response = await githubService.findGitHubUser(`${apiUrl}/${searchText}`);
 
@@ -43,8 +43,10 @@ const useFetchGithubUser = () => {
         searchText,
         setSearchText,
         error, 
+        setError,
         loading,
         userData,
+        setUserData,
         handleFetchGithubUser,
     }
 }
