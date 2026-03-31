@@ -1,5 +1,13 @@
+import {type GitHubUser } from "../types/github.user.types";
+
+interface GitHubUserResponse {
+  success: boolean;
+  data: GitHubUser | null;
+  error?: string;
+}
+
 const githubService = {
-    findGitHubUser: async function(url: string) {
+    findGitHubUser: async function(url: string): Promise<GitHubUserResponse> {
         try {
             const response = await fetch(url);
 
