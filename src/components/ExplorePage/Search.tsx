@@ -5,8 +5,17 @@ interface SearchGitHubUserProps {
 }
 
 const SearchGitHubUser = ({searchText, setSearchText, handleFetchGithubUser}: SearchGitHubUserProps) => {
+
+    const handleSubmit = (e: React.SubmitEvent) => {
+        e.preventDefault();
+        handleFetchGithubUser();
+    }
+
     return (
-        <section className="my-12 py-8 px-4 w-full max-w-lg mx-auto flex flex-col gap-8 items-center">
+        <form 
+            className="my-10 py-8 px-4 w-full max-w-lg mx-auto flex flex-col gap-8 items-center"
+            onSubmit={handleSubmit}
+        >
             <input 
                 type="search"
                 placeholder="Enter a github username..." 
@@ -17,12 +26,12 @@ const SearchGitHubUser = ({searchText, setSearchText, handleFetchGithubUser}: Se
 
             <button 
                 type="submit"
-                className="bg-blue-default text-text-primary py-3 px-8 rounded-2xl w-full font-medium active:translate-y-1 cursor-pointer hover:translate-y-0.5 transition duration-200"
-                onClick={handleFetchGithubUser}
+                disabled={searchText === ""}
+                className="bg-blue-default text-text-primary py-3 px-8 rounded-2xl w-full font-medium active:translate-y-1 cursor-pointer hover:translate-y-0.5 transition duration-200 disabled:bg-blue-default/80 disabled:hover:translate-y-0"
             >
                 Search
             </button>
-        </section>
+        </form>
     )
 }
 
