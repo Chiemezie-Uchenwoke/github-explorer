@@ -57,8 +57,8 @@ const ExplorePage = () => {
                         avatarUrl={userData.avatar_url}
                         name={userData.name}
                         login={userData.login}
-                        bio={userData.bio}
-                        location={userData.location}
+                        bio={userData.bio ?? ""}
+                        location={userData.location ?? ""}
                         followers={userData.followers}
                         following={userData.following}
                         publicRepos={userData.public_repos}

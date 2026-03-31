@@ -19,6 +19,12 @@ const useFetchGithubUser = () => {
         try {
             const response: GitHubUserResponse = await githubService.findGitHubUser(`${searchText}`);
 
+            if (!searchText) {
+                setError("Enter a valid github username");
+                setUserData(null);
+                return;
+            };
+
             if (!response.success) {
                 setError(response.error ?? "Something went wrong");
                 setUserData(null);
