@@ -2,11 +2,13 @@ import { useState } from "react";
 import githubService from "../services/githubService";
 import { type GitHubUser } from "../types/github.user.types";
 
-interface Response {
+interface GitHubUserResponse {
     success: boolean;
     data: GitHubUser | null;
     error?: string;
 }
+
+const apiUrl = "https://api.github.com/users";
 
 const useFetchGithubUser = () => {
     const [searchText, setSearchText] = useState("");
@@ -17,9 +19,7 @@ const useFetchGithubUser = () => {
     const handleFetchGithubUser = async () => {
         setLoading(true);
         try {
-            const apiUrl = "https://api.github.com/users";
-
-            const response: Response = await githubService.findGitHubUser(`${apiUrl}/${searchText}`);
+            const response: GitHubUserResponse = await githubService.findGitHubUser(`${apiUrl}/${searchText}`);
 
             if (!response.success) {
                 setError(response.error ?? "Something went wrong");
