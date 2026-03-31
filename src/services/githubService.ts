@@ -7,9 +7,18 @@ interface GitHubUserResponse {
 }
 
 const githubService = {
-    findGitHubUser: async function(url: string): Promise<GitHubUserResponse> {
+    findGitHubUser: async function(searchText: string): Promise<GitHubUserResponse> {
         try {
-            const response = await fetch(url);
+            const apiUrl = "https://api.github.com/users";
+            const response = await fetch(`${apiUrl}/${searchText}`);
+
+            if (response.status === 404) {
+                return {
+                    success: false,
+                    data: null,
+                    error: "User not found"
+                };
+            }
 
             if (!response.ok) {
                 return {

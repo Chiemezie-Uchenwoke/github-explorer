@@ -8,8 +8,6 @@ interface GitHubUserResponse {
     error?: string;
 }
 
-const apiUrl = "https://api.github.com/users";
-
 const useFetchGithubUser = () => {
     const [searchText, setSearchText] = useState("");
     const [error, setError] = useState("");
@@ -19,7 +17,7 @@ const useFetchGithubUser = () => {
     const handleFetchGithubUser = async () => {
         setLoading(true);
         try {
-            const response: GitHubUserResponse = await githubService.findGitHubUser(`${apiUrl}/${searchText}`);
+            const response: GitHubUserResponse = await githubService.findGitHubUser(`${searchText}`);
 
             if (!response.success) {
                 setError(response.error ?? "Something went wrong");
