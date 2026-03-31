@@ -15,7 +15,7 @@ interface UserModalProps {
 const UserModal = ({avatarUrl, name, login, bio, location, followers, following, publicRepos, onClick}: UserModalProps) => {
     return (
         <div className="w-full h-screen fixed top-0 bg-primary/50 flex justify-center items-center z-200">
-            <div className="w-9/10 max-w-lg h-4/5 bg-primary border border-text-primary/8 py-8 px-4 sm:px-5 overflow-y-auto flex flex-col gap-4 rounded-2xl shadow-lg relative">
+            <div className="w-9/10 max-w-lg h-4/5 max-h-120 bg-primary border border-text-primary/8 py-8 px-4 sm:px-5 overflow-y-auto flex flex-col gap-4 rounded-2xl shadow-lg relative">
                 <button 
                     onClick={onClick}
                     className="text-text-primary/80 border border-text-primary/20 self-start w-10 h-10 rounded-full flex justify-center items-center text-lg absolute right-4 top-8 sm:right-5 cursor-pointer bg-text-primary/1 hover:bg-text-primary/5 duration-200"
