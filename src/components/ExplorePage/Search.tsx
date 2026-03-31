@@ -27,7 +27,7 @@ const SearchGitHubUser = ({searchText, setSearchText, handleFetchGithubUser}: Se
             <button 
                 type="submit"
                 disabled={searchText === ""}
-                className="bg-blue-default text-text-primary py-3 px-8 rounded-2xl w-full font-medium active:translate-y-1 cursor-pointer hover:translate-y-0.5 transition duration-200 disabled:bg-blue-default/80 disabled:hover:translate-y-0"
+                className="bg-blue-pri text-text-primary py-3 px-8 rounded-2xl w-full font-medium active:translate-y-1 cursor-pointer hover:translate-y-0.5 transition duration-200 disabled:bg-blue-default/80 disabled:hover:translate-y-0"
             >
                 Search
             </button>
