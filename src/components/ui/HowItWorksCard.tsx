@@ -11,7 +11,7 @@ const HowItWorksCard = ({icon, title, desc}: HowItWorksProps) => {
 
     return (
         <article className="bg-card border border-blue-pri/30 py-8 lg:py-10 px-4 lg:px-6 flex flex-col gap-5 rounded-2xl select-none shadow-lg shadow-text-primary/1 transition duration-300 ease-in-out hover:-translate-y-3">
-            <span className="w-12 h-12 flex justify-center items-center bg-primary rounded-lg text-text-primary/80 text-xl border border-text-primary/25">
+            <span className="w-12 h-12 flex justify-center items-center bg-blue-pri rounded-full text-text-primary text-xl border border-blue-light/20">
                 <Icon />
             </span>
 

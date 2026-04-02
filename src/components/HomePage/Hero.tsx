@@ -19,7 +19,7 @@ const HomePageHero = () => {
 
             <Link 
                 to={"/explore"}
-                className="bg-text-primary/90 py-3 px-10 rounded-2xl font-semibold my-3 hover:brightness-90 transition duration-200 lg:text-xl"
+                className="bg-blue-pri text-text-primary py-3 px-10 rounded-2xl font-semibold my-3 hover:brightness-90 transition duration-200 lg:text-xl"
             >
                 Start Exploring
             </Link>
