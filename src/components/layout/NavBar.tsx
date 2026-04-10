@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { IoMenu, IoCloseOutline } from "react-icons/io5";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -25,11 +25,25 @@ const NavBar = () => {
 
                 <ul className="hidden lg:flex items-center gap-8">
                     <li className="text-text-primary font-medium hover:text-blue-light duration-200">
-                        <Link to={"/"}> Home </Link>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? "text-blue-pri" : ""
+                            }
+                        >
+                            Home
+                        </NavLink>
                     </li>
 
                     <li className="text-text-primary font-medium hover:text-blue-light duration-200">
-                        <Link to={"/explore"}> Explore </Link>
+                        <NavLink
+                            to="/explore"
+                            className={({ isActive }) =>
+                                isActive ? "text-blue-pri" : ""
+                            }
+                        >
+                            Explore
+                        </NavLink>
                     </li>
                 </ul>
 
@@ -47,11 +61,25 @@ const NavBar = () => {
                         (
                             <ul className="bg-secondary absolute right-0 top-20 w-3/5 max-w-100 py-10 px-6 rounded-3xl border-2 border-text-primary/15 z-50 flex flex-col gap-4">
                                 <li className="text-text-primary/90 font-medium ">
-                                    <Link to={"/"}> Home </Link>
+                                    <NavLink
+                                        to="/"
+                                        className={({ isActive }) =>
+                                            isActive ? "text-blue-pri" : ""
+                                        }
+                                    >
+                                        Home
+                                    </NavLink>
                                 </li>
 
                                 <li className="text-text-primary/90 font-medium ">
-                                    <Link to={"/explore"}> Explore </Link>
+                                    <NavLink
+                                        to="/explore"
+                                        className={({ isActive }) =>
+                                            isActive ? "text-blue-pri" : ""
+                                        }
+                                    >
+                                        Explore
+                                    </NavLink>
                                 </li>
                             </ul>
                         )
