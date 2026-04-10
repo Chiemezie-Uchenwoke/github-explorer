@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Explore = () => {
     return (
         <div className="flex flex-col gap-8 lg:gap-12 items-center bg-secondary py-16 lg:py-20">
-            <h2 className="text-center text-text-primary/90 text-3xl lg:text-4xl capitalize font-semibold">
+            <h2 className="text-center text-text-primary/90 text-2xl lg:text-4xl capitalize font-semibold">
                 Ready to explore GitHub?
             </h2>
 
