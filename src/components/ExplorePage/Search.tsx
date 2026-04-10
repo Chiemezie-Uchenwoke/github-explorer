@@ -21,7 +21,7 @@ const SearchGitHubUser = ({searchText, setSearchText, handleFetchGithubUser}: Se
                 placeholder="Enter a github username..." 
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)} 
-                className="w-full border border-text-primary placeholder:text-text-primary/70 px-3 h-12 lg:h-16 rounded-2xl text-text-primary/80"
+                className="w-full border border-text-primary placeholder:text-text-primary/70 px-3 h-12 lg:h-16 rounded-2xl outline-0 focus:border-blue-pri text-text-primary/80"
             />
 
             <button 
