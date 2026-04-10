@@ -4,6 +4,7 @@ import useFetchGithubUser from "../hooks/useFetchGithubUser";
 import Loader from "../components/ui/Loader";
 import UserModal from "../components/ui/UserModal";
 import { useEffect} from "react";
+import { AnimatePresence } from "motion/react";
 
 const ExplorePage = () => {
     const {
@@ -52,22 +53,24 @@ const ExplorePage = () => {
                 handleFetchGithubUser={handleFetchGithubUser}
             />
 
-            {
-                userData && (
-                    <UserModal 
-                        avatarUrl={userData.avatar_url}
-                        name={userData.name}
-                        login={userData.login}
-                        bio={userData.bio ?? ""}
-                        location={userData.location ?? ""}
-                        followers={userData.followers}
-                        following={userData.following}
-                        publicRepos={userData.public_repos}
-                        onClick={() => setUserData(null)}
-                        repos={repos ? repos : []}
-                    />
-                )
-            }
+            <AnimatePresence mode="wait">
+                {
+                    userData && (
+                        <UserModal 
+                            avatarUrl={userData.avatar_url}
+                            name={userData.name}
+                            login={userData.login}
+                            bio={userData.bio ?? ""}
+                            location={userData.location ?? ""}
+                            followers={userData.followers}
+                            following={userData.following}
+                            publicRepos={userData.public_repos}
+                            onClick={() => setUserData(null)}
+                            repos={repos ? repos : []}
+                        />
+                    )
+                }
+            </AnimatePresence>
 
         </MainLayout>
     )
