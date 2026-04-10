@@ -20,7 +20,7 @@ const NavBar = () => {
                     className="text-text-primary font-semibold text-lg md:text-xl cursor-pointer"
                     onClick={() => navigate("/")}
                 >
-                    GitHub Explorer
+                    DevFinder
                 </h1>
 
                 <ul className="hidden lg:flex items-center gap-8">
