@@ -1,6 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 import {type GitHubRepos } from "../../types/github.user.types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 interface UserModalProps {
@@ -18,6 +18,21 @@ interface UserModalProps {
 
 const UserModal = ({avatarUrl, name, login, bio, location, followers, following, publicRepos, onClick, repos}: UserModalProps) => {
     const [isRepoVisible, setIsRepoVisible] = useState(false);
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                onClick();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [onClick]);
+
     return (
         <motion.div 
             className="w-full h-screen fixed top-0 bg-primary/50 flex justify-center items-center z-200"
