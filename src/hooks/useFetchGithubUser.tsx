@@ -1,10 +1,16 @@
 import { useState } from "react";
 import githubService from "../services/githubService";
-import { type GitHubUser } from "../types/github.user.types";
+import { type GitHubUser, type GitHubRepos } from "../types/github.user.types";
 
 interface GitHubUserResponse {
     success: boolean;
     data: GitHubUser | null;
+    error?: string;
+}
+
+interface GitHubRepoResponse {
+    success: boolean;
+    data: GitHubRepos[] | null;
     error?: string;
 }
 
@@ -13,6 +19,7 @@ const useFetchGithubUser = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [userData, setUserData] = useState<GitHubUser | null>(null);
+    const [repos, setRepos] = useState<GitHubRepos[] | null>([]);
 
     const handleFetchGithubUser = async () => {
         setLoading(true);
@@ -31,9 +38,21 @@ const useFetchGithubUser = () => {
                 return;
             } 
 
-            setError("");
-            setSearchText("");
-            setUserData(response.data);
+            if (response.data) {
+                setError("");
+                setSearchText("");
+                setUserData(response.data);
+
+                const repos: GitHubRepoResponse = await githubService.fetchGitHubRepos(response.data.repos_url);
+
+                if (repos.success) {
+                    setRepos(repos.data);
+                } else {
+                    setRepos([]);
+                }
+            }   
+
+            
         } catch(err) {
             console.error(err);
             setUserData(null);
@@ -52,6 +71,7 @@ const useFetchGithubUser = () => {
         userData,
         setUserData,
         handleFetchGithubUser,
+        repos,
     }
 }
 

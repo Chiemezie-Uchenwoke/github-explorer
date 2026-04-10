@@ -3,6 +3,7 @@ export interface GitHubUser {
   id: number;
   avatar_url: string;
   html_url: string;
+  repos_url: string;
   name: string;
   company: string | null;
   blog: string | null;
@@ -19,4 +20,9 @@ export interface GitHubUser {
   hireable: boolean | null;
   site_admin: boolean;
   type: string;
+}
+
+export interface GitHubRepos {
+  id: number;
+  name: string;
 }

@@ -9,7 +9,7 @@ const featuresData: FeaturesData[] = [
     {
         id: 2,
         title: "Repository Explorer",
-        desc: "Browse through a developer's repositories, filtered by language and sorted by stars.",
+        desc: "View a developer's repositories in a simple, organized list after searching their profile",
     },
     {
         id: 3,

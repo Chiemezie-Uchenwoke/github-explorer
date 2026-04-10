@@ -3,11 +3,12 @@ import SearchGitHubUser from "../components/ExplorePage/Search";
 import useFetchGithubUser from "../hooks/useFetchGithubUser";
 import Loader from "../components/ui/Loader";
 import UserModal from "../components/ui/UserModal";
-import { useEffect } from "react";
+import { useEffect} from "react";
 
 const ExplorePage = () => {
     const {
         searchText,
+        repos,
         setSearchText,
         error, 
         setError,
@@ -63,6 +64,7 @@ const ExplorePage = () => {
                         following={userData.following}
                         publicRepos={userData.public_repos}
                         onClick={() => setUserData(null)}
+                        repos={repos ? repos : []}
                     />
                 )
             }
